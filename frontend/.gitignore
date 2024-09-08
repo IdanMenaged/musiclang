@@ -1,13 +1,10 @@
-# python
-.env
-.venv/
-__pycache__/
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# nextjs
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+.yarn/install-state.gz
 
 # testing
 /coverage
@@ -27,7 +24,6 @@ __pycache__/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
 # local env files
 .env*.local
