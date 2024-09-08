@@ -39,6 +39,11 @@ export default function Home() {
               className="border border-black"
             />
           </div>
+          <div
+            className="col-span-2 flex justify-center mt-4"
+          >
+            <button type="submit">Find Songs</button>
+          </div>
         </form>
       </main>
     </>
