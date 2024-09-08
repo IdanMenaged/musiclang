@@ -1,0 +1,2 @@
+[] recommend only songs in the desired language
+[] make sure playlist is properly represented (not only by the first 5 songs)
