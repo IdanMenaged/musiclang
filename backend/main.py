@@ -34,7 +34,7 @@ def get_recommendations_in_language(playlist_id: str, language: str) -> set[str]
         filtered = lyrics.get_song_in_language(api_key=os.getenv('LYRICS_API_KEY'), name=recommendation['name'], language=language)
         if filtered is None:
             continue
-        out.add(recommendation['name'])
+        out.add(recommendation['id'])
     return out
 
 
