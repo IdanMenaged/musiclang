@@ -24,6 +24,9 @@ def get_song_in_language(api_key: str, name: str, language: str) -> dict:
     response = requests.get(url, params)
     if response.status_code != 200:
         raise Exception(response.json())
+    if response.json()['message']['body']['track_list'] == []:
+        print(f'song "{name}" is not in language "{language}"')
+        return None
     return response.json()['message']['body']['track_list'][0]['track']
 
 
@@ -50,6 +53,8 @@ if __name__ == '__main__':
     api_key = os.getenv("LYRICS_API_KEY")
 
     song = get_song_in_language(api_key=api_key, name='Shape of You', language='en')
-    lyrics = get_lyrics(api_key, song['commontrack_id'])
-    print(lyrics['lyrics_body'])
+
+    if song is not None:
+        lyrics = get_lyrics(api_key, song['commontrack_id'])
+        print(lyrics['lyrics_body'])
     
