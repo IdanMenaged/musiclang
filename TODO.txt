@@ -4,3 +4,4 @@
 [] up recommendation count if needed (option in request)
 [] make frontend functional
 [] make sure playlist is properly represented in recommendations (not only by the first 5 songs)
+[] add a page where you can listen to a track and see the lyrics along with translations
