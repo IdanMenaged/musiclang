@@ -10,7 +10,7 @@ SPOTIFY_ACCESS_TOKEN = utils.get_access_token()
 
 
 def main():
-    get_recommendations_in_language(playlist_id='7sUcocXdBtRDrMqV07gnX9', language='he')
+    print(get_recommendations_in_language(playlist_id='7sUcocXdBtRDrMqV07gnX9', language='ar'))
 
 
 def get_recommendations_in_language(playlist_id: str, language: str) -> set[str]:
@@ -35,7 +35,7 @@ def get_recommendations_in_language(playlist_id: str, language: str) -> set[str]
         if filtered is None:
             continue
         out.add(recommendation['name'])
-    print(out)
+    return out
 
 
 

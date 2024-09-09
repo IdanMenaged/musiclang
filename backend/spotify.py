@@ -21,7 +21,7 @@ def get_recommendations(access_token: str, playlist_id: str) -> dict[str, str]:
         formatted_tracks += f',{i['track']['id']}'
     formatted_tracks = formatted_tracks[1:]
 
-    url = f'{SPOTIFY_API_URL}/recommendations?seed_tracks={formatted_tracks}'
+    url = f'{SPOTIFY_API_URL}/recommendations?seed_tracks={formatted_tracks}&limit={LIMIT}'
     headers = {
         'Authorization': f'Bearer {access_token}'
     }
