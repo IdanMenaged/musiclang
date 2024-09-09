@@ -12,7 +12,7 @@ def get_playlist(access_token: str, playlist_id: str) -> dict[str, str]:
     return response.json()
 
 
-def get_recommendations(access_token: str, playlist_id: str):
+def get_recommendations(access_token: str, playlist_id: str) -> dict[str, str]:
     playlist = get_playlist(access_token, playlist_id)
     tracks = playlist['tracks']
     
