@@ -1,4 +1,4 @@
-[] filter recommended songs based on language
+[] filter recommended songs based on language (can use genres maybe?)
 [] make frontend functional
 [] make sure playlist is properly represented in recommendations (not only by the first 5 songs)
 [] add a page where you can listen to a track and see the lyrics along with translations (musixmatch has a feature for that called lyrics views tracking and api call to translate)

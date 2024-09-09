@@ -46,9 +46,26 @@ def tracks_to_names(tracks: dict) -> set[str]:
     return out
 
 
+def get_songs(access_token: str, ids: set[str]) -> list[dict[str, str]]:
+    formatted_ids = ','.join(ids)
+    
+    url = f'{SPOTIFY_API_URL}/tracks'
+    headers = {
+        'Authorization': f'Bearer {access_token}'
+    }
+    params = {
+        'ids': formatted_ids
+    }
+
+    response = requests.get(url=url, headers=headers, params=params)
+    if response.status_code != 200:
+        raise Exception(response.json())
+    return response.json()
+
+
 if __name__ == '__main__':
     import utils
     
     t = utils.get_access_token()
-    r = get_recommendations(t, '1r37MxSmlelGq3LJCmT907')
-    print(tracks_to_names(r))
+    recommendations = get_recommendations(t, '1r37MxSmlelGq3LJCmT907')
+    print(tracks_to_names(recommendations))

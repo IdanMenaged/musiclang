@@ -1,6 +1,7 @@
 import spotify
 import lyrics
 import utils
+from constants import *
 
 from dotenv import load_dotenv
 import os
@@ -10,7 +11,9 @@ SPOTIFY_ACCESS_TOKEN = utils.get_access_token()
 
 
 def main():
-    print(get_recommendations_in_language(playlist_id='7sUcocXdBtRDrMqV07gnX9', language='ar'))
+    ids = get_recommendations_in_language(playlist_id='7sUcocXdBtRDrMqV07gnX9', language='ar')
+    formated_ids = ','.join(list(ids)[:MAX_IDS])
+    print(spotify.get_songs(access_token=SPOTIFY_ACCESS_TOKEN, ids=formated_ids))
 
 
 def get_recommendations_in_language(playlist_id: str, language: str) -> set[str]:
